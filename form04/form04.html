@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>FORM 04</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+	<script src="check4.js"></script>
+</head>
+
+<body>
+	<form name="f" action="https://fit.agu.edu.vn/demo.php" method="get">
+		<table align="center" border="2">
+			<tr>
+				<th colspan="2">
+					THÔNG TIN ĐĂNG KÍ
+				</th>
+			</tr>
+			<tr>
+				<td>Họ và tên:</td>
+				<td>
+					<input id="clHoten" type="text" name="hoTen">
+				</td>
+			</tr>
+			<tr>
+				<td>Ngày sinh:</td>
+				<td id="radio111">
+					<select name="Ngay">
+						<option>Ngày</option>
+						<script>
+							for(var i = 1; i <= 31; i++){
+								document.write('<option>'+i+'</option>');
+							}
+						</script>
+					</select>
+					<select name="Thang">
+						<option>Tháng</option>
+						<script>
+							for(var i = 1; i <= 12; i++){
+							document.write('<option>'+i+'</option>');
+						}
+						</script>
+					</select>
+					
+					<select name="Nam"> 
+						<option>Năm</option>
+						<script>
+							var d = new Date();
+							var y = d.getFullYear();
+							for(var i = 1970; i <= y; i++){
+								document.write('<option>'+i+'</option>');
+							}
+						</script>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Giới tính:</td>
+				<td>
+					<input type="radio" name="GioiTinh" value="Nam" checked>Nam
+					<input type="radio" name="GioiTinh" value="Nữ">Nữ
+					<input type="radio" name="GioiTinh" value="Chưa rõ">Chưa rõ
+				</td>
+			</tr>
+			<tr>
+				<td>Nghề nghiệp:</td>
+				<td>
+					<select>
+						<option>--Chọn--</option>
+						<option>Luật sư</option>
+						<option>Kỹ sư</option>
+						<option>Bác sĩ</option>
+						<option>Giáo viên</option>
+						<option selected>Sinh viên</option>
+						<option>Nghề khác</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Ghi chú:</td>
+				<td>
+					<textarea name = "GhiChu"> Note here</textarea>
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="2" align="center">
+					<button onclick="return check()">Gởi câu hỏi</button>
+					<button type="reset">Hủy bỏ</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+</html>
